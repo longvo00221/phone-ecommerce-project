@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { User } from "@/interface/user";
 
-export default function page() {
+export default function CartPage() {
   const phoneReducer = useSelector((state: RootState) => state.phoneReducer);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -71,7 +71,7 @@ export default function page() {
                 Shopping Cart
               </p>
             </div>
-            <div className="title uppercase text-4xl font-bold tracking-wider">
+            <div className="title uppercase text-2xl font-bold tracking-wider">
               shopping cart
             </div>
             <div className="progress flex gap-16 mt-[50px] mb-[70px]">
@@ -81,15 +81,15 @@ export default function page() {
                   progress ? "cursor-pointer" : ""
                 }`}
               >
-                <div className="content flex items-center gap-[15px]">
+                <div className="content flex items-center gap-[10px]">
                   {!progress ? (
-                    <p className="text-xl rounded-full px-4 py-2 font-bold bg-[#444444] text-white w-[45px] h-[45px]">
+                    <p className="text-lg rounded-full p-2 text-center font-bold bg-[#444444] text-white w-[40px] h-[40px]">
                       1
                     </p>
                   ) : (
-                    <FaCheck className="text-2xl rounded-full p-[12px] font-bold bg-[#444444] text-white w-[45px] h-[45px]" />
+                    <FaCheck className="text-lg rounded-full p-2 text-center font-bold bg-[#444444] text-white w-[40px] h-[40px]" />
                   )}
-                  <p className="text-xl font-bold tracking-wider text-[#444444]">
+                  <p className="text-lg font-bold tracking-wider text-[#444444]">
                     Shopping cart
                   </p>
                 </div>
@@ -102,11 +102,11 @@ export default function page() {
                 />
               </div>
               <div className="checkout relative">
-                <div className="content flex items-center gap-[15px]">
-                  <p className="text-xl rounded-full px-4 py-2 font-bold bg-[#444444] text-white w-[45px] h-[45px]">
+                <div className="content flex items-center gap-[10px]">
+                  <p className="text-lg rounded-full p-2 text-center font-bold bg-[#444444] text-white w-[40px] h-[40px]">
                     2
                   </p>
-                  <p className="text-xl font-bold tracking-wider text-[#444444]">
+                  <p className="text-lg font-bold tracking-wider text-[#444444]">
                     Check out
                   </p>
                 </div>
@@ -124,11 +124,11 @@ export default function page() {
           <div className="right">
             <div className="content p-[30px] mt-48 bg-[#FFFFFF] rounded-[15px] shadow-[0_5px_10px_0_rgb(0,0,0,0.2)]">
               <div className="title">
-                <p className="text-xl font-bold text-[#444444]">Cart Summary</p>
+                <p className="text-xl font-bold text-[#000]">Cart Summary</p>
               </div>
               <div className="separate h-[1px] my-[15px] bg-[#D5D5D5]" />
               <div className="voucher">
-                <p>Voucher</p>
+                <p className="font-semibold">Voucher</p>
                 <div className="input_voucher mt-[15px] relative">
                   <input
                     type="text"
@@ -144,7 +144,7 @@ export default function page() {
               </div>
               <div className="separate h-[1px] my-[15px] bg-[#D5D5D5]" />
               <div className="discount">
-                <p className="tracking-wider pb-4">Total</p>
+                {/* <p className="tracking-wider pb-4"></p> */}
                 <div className="total_discount">
                   <div className="text-sm text-[#444444] flex justify-between pb-1">
                     <p>{phoneReducer.cartList.length} Item</p>
@@ -158,7 +158,7 @@ export default function page() {
               </div>
               <div className="separate h-[1px] my-[15px] bg-[#D5D5D5]" />
               <div className="total flex justify-between pb-6">
-                <p>Total</p>
+                <p className="font-semibold">Total</p>
                 <p>{formatPrice(Number(totalAmount))}đ</p>
               </div>
               <div className="button_checkout ">

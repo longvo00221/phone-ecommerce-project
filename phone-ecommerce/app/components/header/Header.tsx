@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import "./header.scss";
 import Logo from "../icons/icon/Logo";
 import { toast } from "sonner";
+import { LogOut } from "lucide-react";
 
 
 export default function Header() {
@@ -140,34 +141,35 @@ export default function Header() {
             </Button>
             <div
               ref={elRef}
-              className="dropdown_user absolute h-0 overflow-hidden w-[100px] top-[125%] rounded-b-[15px] right-[50%] translate-x-[50%] transition-all duration-300"
+              className="dropdown_user absolute h-0 overflow-hidden w-[150px] top-[140%] rounded-b-[5px] right-[50%] translate-x-[50%] transition-all duration-300"
             >
               {!login ? (
                 <>
-                  <p
-                    className="px-5 py-3 cursor-pointer bg-black hover:bg-[#0000008b] transition-all duration-300"
+                  <div
+                    className="px-5 py-3 cursor-pointer bg-white text-black hover:opacity-80 transition-all duration-300"
                     onClick={() => {
                       router.push("/sign_in"), checkHeight(elRef);
                     }}
                   >
                     Login
-                  </p>
-                  <p
-                    className="px-5 py-3 bg-black cursor-pointer hover:bg-[#0000008b] transition-all duration-300"
+                  </div>
+                  <div
+                    className="px-5 py-3 bg-white text-black cursor-pointer hover:opacity-80 transition-all duration-300"
                     onClick={() => {
                       router.push("/sign_up"), checkHeight(elRef);
                     }}
                   >
                     Register
-                  </p>
+                  </div>
                 </>
               ) : (
-                <p
-                  className="px-5 py-3 cursor-pointer bg-black hover:bg-[#0000008b] transition-all duration-300"
+                <div
+                  className="px-5 py-3 flex items-center justify-between cursor-pointer bg-white text-black hover:opacity-80 transition-all duration-300"
                   onClick={() => handleLogOut()}
                 >
                   Log out
-                </p>
+                  <LogOut size={15}/>
+                </div>
               )}
             </div>
           </div>

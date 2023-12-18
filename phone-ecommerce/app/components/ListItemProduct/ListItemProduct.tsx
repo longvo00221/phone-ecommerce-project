@@ -24,7 +24,7 @@ export default function ListItemProduct(props: Props) {
         </div>
       </div>
       <div className="button_more flex justify-center pt-11 items-center">
-        <Button className="rounded-[15px] py-3 px-5 text-xl gap-2 bg-transparent text-black border-[1px] border-solid border-[black] hover:bg-transparent">
+        <Button className="rounded-[15px] p-5 text-xl gap-2 bg-transparent text-black border-[1px] border-solid border-[black] hover:bg-black hover:text-white">
           See more <IoIosArrowForward className="" />
         </Button>
       </div>
